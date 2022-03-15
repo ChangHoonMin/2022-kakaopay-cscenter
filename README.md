@@ -289,7 +289,7 @@ Authorization: Bearer ${ACCESS_TOKEN}
 
 ##### 6. 미답변 문의 내용 전체 가져오기
 ```
-GET /api/v1/inquiries/no-counselors HTTP 1.1
+GET /api/v1/inquiries/no-replies HTTP 1.1
 Host: localhost:8888
 Authorization: Bearer ${ACCESS_TOKEN}
 ```
@@ -454,7 +454,7 @@ export default ({ app, req, res, redirect, route }, inject) => {
 #### 4. 페이지
 1. 고객 문의 등록 페이지 : /customer/inquiry/register
 2. 고객 문의 확인 페이지 : /customer/inquiry/_id
-3. 고객 아이디로 문의 확인 페이지 : /customer/inquiry/list?id=
+3. 고객 아이디로 문의 확인 페이지 : /customer/inquiry/list
 4. 상담사 로그인 페이지 : /login
 5. 미 답변 문의 리스트 페이지 : /counselor/inquiry/list
     * setInterval을 사용하여 페이지를 10초에 한번씩 polling 하도록 하였습니다.
