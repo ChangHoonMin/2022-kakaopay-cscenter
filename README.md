@@ -179,7 +179,7 @@ public interface BaseMapStruct<E extends BaseEntity, REQ extends BaseRequestDto,
 ```
 
 #### 7. API
-API는 총 6개로 구성 되어 있습니다.
+API는 총 7개로 구성 되어 있습니다.
 ##### 1. 고객 문의 내용 API
 ```
 GET /api/v1/inquiries/{id} HTTP 1.1
