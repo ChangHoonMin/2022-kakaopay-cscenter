@@ -27,26 +27,5 @@
 </script>
 
 <style scoped>
-  table {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 20px 10px;
-  }
-  table th {
-    width: 155px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #ffffff;
-    background: #61aeff;
-  }
-  table td {
-    width: 155px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #eee;
-  }
+
 </style>
