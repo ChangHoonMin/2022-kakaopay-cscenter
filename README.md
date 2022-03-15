@@ -1,7 +1,7 @@
 # 카카오페이 사전과제 - 고객문의 접수 및 답변 기능 개발
 
 ## 데이터베이스 ERD
-<img width="569" alt="스크린샷 2022-03-15 21 33 53" src="https://user-images.githubusercontent.com/60500720/158423926-6970cbf8-7820-4611-b460-3b74c0a33417.png">
+<img width="569" alt="erd" src="https://user-images.githubusercontent.com/60500720/158424616-6fa389cc-d4d8-4479-a344-d0c042c58bb2.png">
 
 ## 프로젝트 구성
 * Backend
