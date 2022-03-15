@@ -3,11 +3,11 @@
     <h2>답변 등록</h2>
     <div>
       <p>제목 :</p>
-      <span v-html="inquiry.title"></span>
+      <span>{{ inquiry.title }}</span>
     </div>
     <div>
       <p>내용 :</p>
-      <span v-html="inquiry.content"></span>
+      <span>{{ inquiry.content }}</span>
     </div>
     <div>
       <p>답변 내용 :</p>

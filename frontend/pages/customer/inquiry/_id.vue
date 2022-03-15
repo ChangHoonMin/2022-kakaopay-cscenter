@@ -3,11 +3,11 @@
     <h2>문의글 확인</h2>
     <dl>
       <dt>제목 :</dt>
-      <dd v-html="inquiry.title"></dd>
+      <dd>{{ inquiry.title }}</dd>
     </dl>
     <dl>
       <dt>내용 :</dt>
-      <dd v-html="inquiry.content"></dd>
+      <dd>{{ inquiry.content }}</dd>
     </dl>
     <dl v-if="inquiry.reply">
       <dt>답변 내용 :</dt>
