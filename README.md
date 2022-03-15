@@ -34,7 +34,7 @@ $ npm run dev
 ## 문제 해결 전략
 ### Backend (API)
 #### 1. 공통 Response
-모든 성공(SuccessResponseApiDto)과 실패(ErrorResponseApiDto)를 AbstractApiResponseDto을 확장하여 사용합니다.
+모든 성공(SuccessResponseApiDto)과 실패(ErrorResponseApiDto)를 AbstractApiResponseDto을 확장하여 구현 하였습니다.
 ```Java
 @Getter
 public abstract class AbstractApiResponseDto {
@@ -58,11 +58,11 @@ public abstract class AbstractApiResponseDto {
 ```
 **ErrorResponse**
 ```Json
-{ "code": ?, "message":  ?, "errors":  ? }
+{ "code": "?", "message":  "?", "errors":  "?" }
 ```
 
 #### 2. 공통 에러 처리
-모든 오류를 RestExceptionHandler에서 처리하여 공통적으로 에러 처리를 하고 있습니다.
+모든 오류를 RestExceptionHandler에서 공통으로 처리하도록 구현 하였습니다.
 ```Java
 public class RestExceptionHandler {
 
@@ -81,7 +81,7 @@ public class RestExceptionHandler {
     ...생략
 }
 ```
-- Custom Exception (KakaoPayException)을 사용하여 의도적으로 내는 오류들도 처리합니다.
+- Custom Exception (KakaoPayException)을 사용하여 의도적으로 내는 오류들도 처리하고 있습니다.
 - 모든 오류와 메세지는 HttpStatus 기반으로 사용하고 있습니다. (대략 내용은 아래와 같습니다.)
     * 400 : Bad Request 
         * Spring Validation 통하여 들어온 에러를 처리하고, field 오류 정보를 같이 내보내고 있습니다.
@@ -97,7 +97,7 @@ public class RestExceptionHandler {
         
 #### 3. Security + Jwt를 이용한 인증 및 로그인
 1. 로그인을 통하여 access_token을 발급 하도록 하였습니다.
-2. 인증이 필요한 페이지들은 access_token을 사용하여 Filter, Provider을 통하여 인증을 거치고 있습니다.
+2. 인증이 필요한 페이지들은 access_token을 사용하여 Filter, Provider을 통하여 인증을 거치도록 하였습니다.
 3. access_token 유효기간은 기본 30분으로 하였습니다.
 ```Java
 public class TokenManager {
