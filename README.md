@@ -91,9 +91,9 @@ public class RestExceptionHandler {
     * 404 : Not Found
         * 리소스가 없을때, 지원하지 않는 Http Method로 들어 왔을 경우 처리하고 있습니다
     * 409 : Conflict
-        * 업데이트 할때 충돌이 나는 경우 (이미 업데이트 된 경우) 처리하고 있습니다.
+        * 충돌이 나는 경우 (이미 업데이트 된 경우) 처리하고 있습니다.
     * 500 : Internal Server Error
-        * 오류를 처리 할 수 없을떄 알 수 없을 때 처리하고 있습니다.
+        * 오류를 처리 할 수 없을때 처리하고 있습니다.
         
 #### 3. Security + Jwt를 이용한 인증 및 로그인
 1. 로그인을 통하여 access_token을 발급 하도록 하였습니다.
