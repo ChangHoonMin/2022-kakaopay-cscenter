@@ -43,6 +43,12 @@ public class InquiryServiceImpl implements InquiryService {
 
     @Override
     @Transactional(readOnly = true)
+    public List<InquiryResponseDto> findByCustomerId(String customerId) {
+        return InquiryMapStruct.INSTANCE.toDtoList(inquiryRepository.findByCustomerId(customerId));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<InquiryResponseDto> findByCounselorIsNull() {
         return InquiryMapStruct.INSTANCE.toDtoList(inquiryRepository.findByCounselorIsNull());
     }

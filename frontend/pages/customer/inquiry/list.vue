@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>문의글 리스트 (전체 확인 테스트용)</h2>
+    <h2>고객 아이디로 문의글 조회</h2>
     <InquiryListTable
       :inquiryList="inquiryList"
       :readOnly="true"
@@ -14,9 +14,9 @@
     name: "list",
     layout: 'customer',
     components: {InquiryListTable},
-    async asyncData({ $kakao }) {
+    async asyncData({ $kakao, query }) {
       try {
-        const { data } = await $kakao.fetch.get('/api/v1/inquiries');
+        const { data } = await $kakao.fetch.get(`/api/v1/inquiries/customers/${query.id}`);
         return {
           inquiryList: data
         }

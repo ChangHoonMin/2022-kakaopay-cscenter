@@ -11,6 +11,7 @@ public interface InquiryService {
     InquiryResponseDto save(InquiryRequestDto inquiryRequestDto);
     Inquiry findEntityById(Long id);
     InquiryResponseDto findById(Long id);
+    List<InquiryResponseDto> findByCustomerId(String customerId);
     List<InquiryResponseDto> findByCounselorIsNull();
     InquiryResponseDto updateCounselor(Long id, Long counselorId);
 }

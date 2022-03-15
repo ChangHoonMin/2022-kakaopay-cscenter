@@ -1,10 +1,13 @@
 <template>
-  <nuxt />
+  <DefaultLayout />
 </template>
 
 <script>
+  import DefaultLayout from "~/components/DefaultLayout";
+
   export default {
-    name: "customer"
+    name: "customer",
+    components: {DefaultLayout}
   }
 </script>
 

@@ -1,11 +1,14 @@
 <template>
-  <nuxt />
+  <DefaultLayout />
 </template>
 
 <script>
+  import DefaultLayout from "~/components/DefaultLayout";
+
   export default {
     name: "counselor",
-    middleware: ['auth']
+    components: {DefaultLayout},
+    middleware: ['auth'],
   }
 </script>
 

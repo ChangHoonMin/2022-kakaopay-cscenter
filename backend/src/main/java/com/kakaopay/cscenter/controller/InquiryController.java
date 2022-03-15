@@ -13,13 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-/**
- * 1. 고객문의 등록 O
- * 2. 고객문의 전체 가져오기 O
- * 3. 문의 상담사 지정 업데이트 O
- * 4. 고객 문의 답변 등록 O
- * 5. 고객 문의 한건 가져오기 O
- */
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -35,6 +28,12 @@ public class InquiryController {
     @GetMapping("/inquiries")
     public ResponseEntity<?> all() {
         return SuccessApiResponseDto.entity(inquiryService.findAll());
+    }
+
+
+    @GetMapping("/inquiries/customers/{id}")
+    public ResponseEntity<?> byCustomerId(@PathVariable String id) {
+        return SuccessApiResponseDto.entity(inquiryService.findByCustomerId(id));
     }
 
     /**

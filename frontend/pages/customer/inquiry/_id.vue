@@ -13,7 +13,6 @@
       <dt>답변 내용 :</dt>
       <dd v-html="inquiry.reply.content"></dd>
     </dl>
-    <nuxt-link to="/">홈으로!</nuxt-link>
   </div>
 </template>
 

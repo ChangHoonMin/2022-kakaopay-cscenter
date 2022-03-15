@@ -44,7 +44,7 @@
     },
     middleware({ $kakao, redirect }) {
       if ($kakao.cookie.get('access_token')) {
-        redirect('/counselor');
+        redirect('/counselor/inquiry/list');
       }
     },
     methods: {
@@ -52,7 +52,7 @@
         try {
           const { data } = await this.$kakao.fetch.post('/api/v1/auth/authorize', this.counselor, { isErrorHandler: true });
           this.$kakao.cookie.set('access_token', data.accessToken, data.accessTokenExpiration);
-          await this.$router.push('/counselor');
+          await this.$router.push('/counselor/inquiry/list');
         } catch (e) {
           if (e.errors) {
             e.errors?.forEach(({ field, message }) => this.fieldErrorMessage[field] = message);

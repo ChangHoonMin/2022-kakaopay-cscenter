@@ -6,7 +6,7 @@
         <th>등록일</th>
         <th v-if="readOnly">답변 완료 여부</th>
         <th v-else>답변 및 담당자</th>
-        <th v-if="readOnly">(읽기 전용) 문의 확인 페이지</th>
+        <th v-if="readOnly">상세 페이지</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
           <button @click="updateCounselor(inquiry.id)">답변 및 담당자로 지정</button>
         </td>
         <td v-if="readOnly">
-          <nuxt-link tag="button" :to="`/customer/inquiry/${inquiry.id}`">이 버튼을 누르면 확인 페이지로 갑니다.</nuxt-link>
+          <nuxt-link tag="button" :to="`/customer/inquiry/${inquiry.id}`">Go!</nuxt-link>
         </td>
       </tr>
       <tr v-if="!inquiryList?.length">
