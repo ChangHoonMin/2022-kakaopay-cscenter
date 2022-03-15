@@ -17,7 +17,7 @@ public class TokenManager {
 
     private final Key key;
     private static final String PAYLOAD = "payload";
-    private static final long DEFAULT_EXPIRATION = 1800; // TODO : 1800
+    private static final long DEFAULT_EXPIRATION = 1800;
 
     public TokenManager(@Value("${jwt.secret}") String secret) {
         this.key = Keys.hmacShaKeyFor(secret.getBytes());

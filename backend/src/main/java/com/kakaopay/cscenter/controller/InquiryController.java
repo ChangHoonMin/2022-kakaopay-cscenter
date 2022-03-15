@@ -69,7 +69,7 @@ public class InquiryController {
     }
 
     /**
-     * 문의 내용 전체 가져오기
+     * 미답변 문의 내용 전체 가져오기
      * @return
      */
     @GetMapping("/inquiries/no-counselors")
