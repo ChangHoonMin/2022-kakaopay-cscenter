@@ -14,10 +14,10 @@ import javax.validation.constraints.Size;
 public class InquiryRequestDto implements BaseRequestDto {
 
     @NotBlank(message = "아이디를 입력해주세요.")
+    @Size(max = 20, message = "아이디는 최대 20글자까지만 가능합니다.")
     private String customerId;
 
     @NotBlank(message = "제목을 입력해주세요.")
-    @Size(max = 20, message = "제목은 최대 20글자까지만 가능합니다.")
     private String title;
 
     @NotBlank(message = "문의 내용을 입력해주세요.")
