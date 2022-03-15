@@ -97,7 +97,7 @@ public class RestExceptionHandler {
         
 #### 3. Security + Jwt를 이용한 인증 및 로그인
 1. 로그인을 통하여 access_token을 발급 하도록 하였습니다.
-2. 인증이 필요한 페이지들은 access_token을 사용하여 Filter, Provider을 통하여 인증을 거치도록 하였습니다.
+2. 인증이 필요한 API들은 access_token을 사용하여 Filter, Provider을 통하여 인증을 거치도록 하였습니다.
 3. access_token 유효기간은 기본 30분으로 하였습니다.
 ```Java
 public class TokenManager {
