@@ -12,8 +12,8 @@
 
   export default {
     name: "list",
-    components: {InquiryListTable},
     layout: 'counselor',
+    components: {InquiryListTable},
     async asyncData({ $kakao }) {
       try {
         const { data } = await $kakao.fetch.get('/api/v1/inquiries/no-replies');

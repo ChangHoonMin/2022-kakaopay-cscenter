@@ -12,7 +12,6 @@
   import InquiryListTable from "~/components/InquiryListTable";
   export default {
     name: "list",
-    layout: 'customer',
     components: {InquiryListTable},
     async asyncData({ $kakao }) {
       try {
