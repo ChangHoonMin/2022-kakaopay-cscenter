@@ -5,8 +5,8 @@
         <th>제목</th>
         <th>등록일</th>
         <th v-if="readOnly">답변 완료 여부</th>
-        <th v-else>답변 및 담당자</th>
-        <th v-if="readOnly">상세 페이지</th>
+        <th v-else>담당자</th>
+        <th>상세 페이지</th>
       </tr>
     </thead>
     <tbody>
@@ -17,14 +17,15 @@
           {{ inquiry.reply ? 'O' : 'X' }}
         </td>
         <td v-else>
-          <button @click="updateCounselor(inquiry.id)">답변 및 담당자로 지정</button>
+          <button v-if="inquiry.counselorId" disabled>담당자 지정 완료</button>
+          <button v-else @click="updateCounselor(inquiry.id)">담당자로 지정</button>
         </td>
-        <td v-if="readOnly">
-          <nuxt-link tag="button" :to="`/customer/inquiry/${inquiry.id}`">Go!</nuxt-link>
+        <td>
+          <nuxt-link tag="button" :to="createDetailPageUrl(inquiry.id)">Go!</nuxt-link>
         </td>
       </tr>
       <tr v-if="!inquiryList?.length">
-        <td :colspan="readOnly ? 4 : 3">문의글이 없습니다.</td>
+        <td :colspan="4">문의글이 없습니다.</td>
       </tr>
     </tbody>
   </table>
@@ -46,7 +47,8 @@
         if (isConfirm) {
           try {
             await this.$kakao.fetch.patch(`/api/v1/inquiries/${id}/counselors`, null, { isErrorHandler: true });
-            await this.$router.push(`/counselor/inquiry/reply?inquiryId=${id}`);
+            alert('정상적으로 처리되었습니다.');
+            this.$nuxt.refresh();
           } catch (e) {
             if (e?.message) {
               alert(e.message);
@@ -54,6 +56,9 @@
           }
         }
       },
+      createDetailPageUrl(id) {
+        return this.readOnly ? `/customer/inquiry/${id}` : `/counselor/inquiry/reply?inquiryId=${id}`;
+      }
     }
   }
 </script>

@@ -16,14 +16,17 @@ public class InquiryResponseDto implements BaseResponseDto {
     private Long id;
     private String title;
     private String content;
+    private Long counselorId;
     private InquiryReplyResponseDto reply;
     private String createdDate;
 
     @Builder
-    protected InquiryResponseDto(Long id, String title, String content, InquiryReplyResponseDto inquiryReply, LocalDateTime createdDate) {
+    protected InquiryResponseDto(Long id, String title, String content, Long counselorId,
+         InquiryReplyResponseDto inquiryReply, LocalDateTime createdDate) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.counselorId = counselorId;
         this.reply = inquiryReply;
         this.createdDate = BaseResponseDto.toStringDateTime(createdDate);
     }

@@ -50,7 +50,7 @@ public class InquiryServiceImpl implements InquiryService {
     @Override
     @Transactional(readOnly = true)
     public List<InquiryResponseDto> findByCounselorIsNull() {
-        return InquiryMapStruct.INSTANCE.toDtoList(inquiryRepository.findByCounselorIsNull());
+        return InquiryMapStruct.INSTANCE.toDtoList(inquiryRepository.findByInquiryReplyIsNull());
     }
 
     @Override

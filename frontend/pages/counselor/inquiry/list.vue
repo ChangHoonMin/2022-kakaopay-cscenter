@@ -16,7 +16,7 @@
     layout: 'counselor',
     async asyncData({ $kakao }) {
       try {
-        const { data } = await $kakao.fetch.get('/api/v1/inquiries/no-counselors');
+        const { data } = await $kakao.fetch.get('/api/v1/inquiries/no-replies');
         return {
           inquiryList: data
         }
