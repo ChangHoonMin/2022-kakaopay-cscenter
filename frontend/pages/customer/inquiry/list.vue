@@ -5,6 +5,7 @@
       :inquiryList="inquiryList"
       :readOnly="true"
     />
+    <nuxt-link :to="`/customer/inquiry/register?customerId=${$route.query.id || ''}`">문의글 작성하기</nuxt-link>
   </div>
 </template>
 

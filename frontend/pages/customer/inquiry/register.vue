@@ -33,7 +33,7 @@
     data() {
       return {
         inquiryForm: {
-          customerId: null,
+          customerId: this.$route?.query?.customerId,
           title: null,
           content: null
         },
