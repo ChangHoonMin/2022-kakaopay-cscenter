@@ -1,0 +1,17 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:kakaopay
+    username: sa
+    password:
+  web:
+    resources:
+      add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+server:
+  port: 8888

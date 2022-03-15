@@ -1,0 +1,19 @@
+spring:
+  security:
+    cors:
+      allow-origin: http://localhost:3000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    org.hibernate.type: trace
+
+jwt:
+  secret: wD2waZxKxzyt8D39RlAseGc7BHjoyC4zHAQ7hEqSEtU=
