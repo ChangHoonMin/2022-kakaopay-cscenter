@@ -11,6 +11,7 @@
 
 <script>
   import InquiryListTable from "~/components/InquiryListTable";
+
   export default {
     name: "list",
     layout: 'customer',

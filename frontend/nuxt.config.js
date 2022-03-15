@@ -6,7 +6,7 @@ require('dotenv').config({
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontend',
+    title: '카카오페이 사전과제',
     htmlAttrs: {
       lang: 'en'
     },
