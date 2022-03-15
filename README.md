@@ -225,7 +225,25 @@ Host: localhost:8888
 |reply|Json|답변|X|
 |createdDate|String|등록일자|O|
 
-##### 3. 로그인 및 토큰 발급
+##### 3. 고객 아이디로 리스트 가져오기
+```
+GET /inquiries/customers/{id} HTTP 1.1
+Host: localhost:8888
+```
+
+**Parameter**
+
+|파라미터|타입|설명|필수|
+|--------------|-------|----------|----|
+|id|String|고객 식별 아이디|O|
+
+**Response**
+
+|파라미터|타입|설명|필수|
+|-----------|------------|------------|----|
+|elements|List< inquiry >|고객 문의 리스트|O|
+
+##### 4. 로그인 및 토큰 발급
 ```
 POST /api/v1/auth/authorize HTTP 1.1
 Host: localhost:8888
@@ -245,7 +263,7 @@ Host: localhost:8888
 |access_token|String|토큰|O|
 |accessTokenExpiration|Long|토큰만료시간|O|
 
-##### 4. 문의 상담사 지정 API
+##### 5. 문의 상담사 지정 API
 ```
 PATCH /api/v1/inquiries/{id}/counselors HTTP 1.1
 Host: localhost:8888
@@ -269,7 +287,7 @@ Authorization: Bearer ${ACCESS_TOKEN}
 |reply|Json|답변|X|
 |createdDate|String|등록일자|O|
 
-##### 5. 미답변 문의 내용 전체 가져오기
+##### 6. 미답변 문의 내용 전체 가져오기
 ```
 GET /api/v1/inquiries/no-counselors HTTP 1.1
 Host: localhost:8888
@@ -286,9 +304,9 @@ Authorization: Bearer ${ACCESS_TOKEN}
 
 |파라미터|타입|설명|필수|
 |-----------|------------|------------|----|
-|elements|List<inquiry>|미답변 문의 리스트|O|
+|elements|List< inquiry >|미답변 문의 리스트|O|
 
-##### 6. 고객 문의 답변 등록 
+##### 7. 고객 문의 답변 등록 
 ```
 POST /api/v1/inquiries/replies HTTP 1.1
 Host: localhost:8888
@@ -436,7 +454,8 @@ export default ({ app, req, res, redirect, route }, inject) => {
 #### 4. 페이지
 1. 고객 문의 등록 페이지 : /customer/inquiry/register
 2. 고객 문의 확인 페이지 : /customer/inquiry/_id
-3. 상담사 로그인 페이지 : /login
-4. 미 답변 문의 리스트 페이지 : /counselor/inquiry/list
+3. 고객 아이디로 문의 확인 페이지 : /customer/inquiry/list?id=
+4. 상담사 로그인 페이지 : /login
+5. 미 답변 문의 리스트 페이지 : /counselor/inquiry/list
     * setInterval을 사용하여 페이지를 10초에 한번씩 polling 하도록 하였습니다.
-5. 문의 답변 등록 페이지 : /counselor/inquiry/reply
+6. 문의 답변 등록 페이지 : /counselor/inquiry/reply

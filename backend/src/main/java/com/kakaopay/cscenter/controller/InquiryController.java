@@ -30,12 +30,6 @@ public class InquiryController {
         return SuccessApiResponseDto.entity(inquiryService.findAll());
     }
 
-
-    @GetMapping("/inquiries/customers/{id}")
-    public ResponseEntity<?> byCustomerId(@PathVariable String id) {
-        return SuccessApiResponseDto.entity(inquiryService.findByCustomerId(id));
-    }
-
     /**
      * 문의 내용 가져오기
      * @param id
@@ -44,6 +38,16 @@ public class InquiryController {
     @GetMapping("/inquiries/{id}")
     public ResponseEntity<?> byId(@PathVariable Long id) {
         return SuccessApiResponseDto.entity(inquiryService.findById(id));
+    }
+
+    /**
+     * 고객 아이디로 리스트 가져오기
+     * @param id
+     * @return
+     */
+    @GetMapping("/inquiries/customers/{id}")
+    public ResponseEntity<?> byCustomerId(@PathVariable String id) {
+        return SuccessApiResponseDto.entity(inquiryService.findByCustomerId(id));
     }
 
     /**
