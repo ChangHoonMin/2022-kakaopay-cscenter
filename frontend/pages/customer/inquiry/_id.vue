@@ -21,12 +21,10 @@
     name: "id",
     layout: 'customer',
     async asyncData({ $kakao, params }) {
-      try {
-        const { data } = await $kakao.fetch.get(`/api/v1/inquiries/${params.id}`);
-        return {
-          inquiry: data
-        }
-      } catch (e) {}
+      const { data } = await $kakao.fetch.get(`/api/v1/inquiries/${params.id}`);
+      return {
+        inquiry: data
+      }
     }
   }
 </script>

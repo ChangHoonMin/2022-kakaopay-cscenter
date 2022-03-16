@@ -15,12 +15,10 @@
     layout: 'counselor',
     components: {InquiryListTable},
     async asyncData({ $kakao }) {
-      try {
-        const { data } = await $kakao.fetch.get('/api/v1/inquiries/no-replies');
-        return {
-          inquiryList: data
-        }
-      } catch (e) {}
+      const { data } = await $kakao.fetch.get('/api/v1/inquiries/no-replies');
+      return {
+        inquiryList: data
+      }
     },
     data() {
       return {
