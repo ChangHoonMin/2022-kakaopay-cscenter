@@ -55,7 +55,7 @@
           await this.$router.push('/counselor/inquiry/list');
         } catch (e) {
           if (e.errors) {
-            e.errors?.forEach(({ field, message }) => this.fieldErrorMessage[field] = message);
+            e.errors.forEach(({ field, message }) => this.fieldErrorMessage[field] = message);
           } else {
             alert(e.message);
           }
