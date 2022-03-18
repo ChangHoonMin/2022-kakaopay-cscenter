@@ -33,7 +33,7 @@ public class InquiryReply extends BaseEntity {
     }
 
     public InquiryReply inquiry(Inquiry inquiry) {
-        this.inquiry = inquiry;
+        this.inquiry = inquiry.updateReply(this);
         return this;
     }
 

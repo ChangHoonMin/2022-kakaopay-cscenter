@@ -99,7 +99,7 @@ export default ({ app, req, res, redirect, route }, inject) => {
         return request(url, {
           ...options,
           method: 'PATCH',
-          body: JSON.stringify(data)
+          ...(data ? {body: JSON.stringify(data)} : {})
         });
       },
       // TODO : put, delete

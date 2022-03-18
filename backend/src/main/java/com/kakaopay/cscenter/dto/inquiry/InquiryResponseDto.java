@@ -21,7 +21,7 @@ public class InquiryResponseDto implements BaseResponseDto {
     private String createdDate;
 
     @Builder
-    protected InquiryResponseDto(Long id, String title, String content, Long counselorId,
+    private InquiryResponseDto(Long id, String title, String content, Long counselorId,
          InquiryReplyResponseDto inquiryReply, LocalDateTime createdDate) {
         this.id = id;
         this.title = title;
