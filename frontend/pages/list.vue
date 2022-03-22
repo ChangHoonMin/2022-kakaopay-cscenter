@@ -15,12 +15,10 @@
     name: "list",
     components: {InquiryListTable},
     async asyncData({ $kakao }) {
-      try {
-        const { data } = await $kakao.fetch.get('/api/v1/inquiries');
-        return {
-          inquiryList: data
-        }
-      } catch (e) {}
+      const { data } = await $kakao.fetch.get('/api/v1/inquiries');
+      return {
+        inquiryList: data
+      }
     },
   }
 </script>

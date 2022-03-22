@@ -25,7 +25,7 @@
         </td>
       </tr>
       <tr v-if="!inquiryList?.length">
-        <td :colspan="4">문의글이 없습니다.</td>
+        <td colspan="4">문의글이 없습니다.</td>
       </tr>
     </tbody>
   </table>

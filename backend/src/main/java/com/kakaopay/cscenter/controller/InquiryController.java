@@ -76,8 +76,8 @@ public class InquiryController {
      * @return
      */
     @GetMapping("/inquiries/no-replies")
-    public ResponseEntity<?> byCounselorIsNull() {
-        return SuccessApiResponseDto.entity(inquiryService.findByCounselorIsNull());
+    public ResponseEntity<?> byInquiryReplyIsNull() {
+        return SuccessApiResponseDto.entity(inquiryService.findByInquiryReplyIsNull());
     }
 
     /**

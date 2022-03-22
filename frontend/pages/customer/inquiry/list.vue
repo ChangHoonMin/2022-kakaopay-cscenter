@@ -17,12 +17,10 @@
     layout: 'customer',
     components: {InquiryListTable},
     async asyncData({ $kakao, query }) {
-      try {
-        const { data } = await $kakao.fetch.get(`/api/v1/inquiries/customers/${query.id}`);
-        return {
-          inquiryList: data
-        }
-      } catch (e) {}
+      const { data } = await $kakao.fetch.get(`/api/v1/inquiries/customers/${query.id}`);
+      return {
+        inquiryList: data
+      }
     },
   }
 </script>

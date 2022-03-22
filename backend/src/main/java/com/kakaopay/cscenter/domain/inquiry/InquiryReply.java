@@ -19,7 +19,7 @@ public class InquiryReply extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @OneToOne(mappedBy = "inquiryReply")
     private Inquiry inquiry;
 
     @Column(columnDefinition = "TEXT", nullable = false)
@@ -33,7 +33,7 @@ public class InquiryReply extends BaseEntity {
     }
 
     public InquiryReply inquiry(Inquiry inquiry) {
-        this.inquiry = inquiry;
+        this.inquiry = inquiry.updateReply(this);
         return this;
     }
 

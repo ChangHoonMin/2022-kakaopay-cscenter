@@ -44,10 +44,10 @@ export default ({ app, req, res, redirect, route }, inject) => {
     };
     const excludeErrorCode = [401];
     const errorHandlerObject = {
-      400(responseJson, { fieldErrorMessage }) {
+      //400(responseJson, { fieldErrorMessage }) {
         // bad request
         //responseJson?.errors?.forEach(({ field, message }) => fieldErrorMessage[field] = message)
-      },
+      //},
       401() {
         if (process.client) {
           alert('세션이 만료되어 로그인 페이지로 이동합니다.');
@@ -60,6 +60,7 @@ export default ({ app, req, res, redirect, route }, inject) => {
       }
     };
     async function request(url, {isErrorHandler, ...restOptions}) {
+      // TODO : Deep copy
       const mergeOptions = {
         ...defaultOptions,
         ...restOptions,
@@ -81,24 +82,24 @@ export default ({ app, req, res, redirect, route }, inject) => {
       return responseJson;
     }
     return {
-      async get(url, options) {
-        return await request(url, {
+      get(url, options) {
+        return request(url, {
           ...options,
           method: 'GET'
         });
       },
-      async post(url, data, options) {
-        return await request(url, {
+      post(url, data, options) {
+        return request(url, {
           ...options,
           method: 'POST',
           body: JSON.stringify(data)
         });
       },
-      async patch(url, data, options) {
-        return await request(url, {
+      patch(url, data, options) {
+        return request(url, {
           ...options,
           method: 'PATCH',
-          body: JSON.stringify(data)
+          ...(data ? {body: JSON.stringify(data)} : {})
         });
       },
       // TODO : put, delete

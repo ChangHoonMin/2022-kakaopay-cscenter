@@ -22,12 +22,10 @@ public class Inquiry extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn
+    @ManyToOne(fetch = FetchType.LAZY)
     private Counselor counselor;
 
     @OneToOne
-    @JoinColumn
     private InquiryReply inquiryReply;
 
     @Column(nullable = false, length = 20)

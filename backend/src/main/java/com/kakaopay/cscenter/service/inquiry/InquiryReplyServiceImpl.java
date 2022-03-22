@@ -21,8 +21,7 @@ public class InquiryReplyServiceImpl implements InquiryReplyService {
     public InquiryReplyResponseDto save(InquiryReplyRequestDto inquiryReplyRequestDto, Long counselorId) {
         Inquiry inquiry = inquiryService.findEntityById(inquiryReplyRequestDto.getInquiryId())
                 .counselorIdValidation(counselorId);
-        InquiryReply inquiryReply = inquiryReplyRepository.save(inquiryReplyRequestDto.toEntity().inquiry(inquiry));
-        inquiry.updateReply(inquiryReply);
-        return inquiryReply.toDto();
+        InquiryReply inquiryReply = inquiryReplyRequestDto.toEntity().inquiry(inquiry);
+        return inquiryReplyRepository.save(inquiryReply).toDto();
     }
 }
